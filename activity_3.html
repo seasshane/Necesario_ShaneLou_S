@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<button type="button" onclick="changeText1()">+</button>
+<button type="button" onclick="changeText2()">-</button>
+<button type="button" onclick="changeText3()">*</button>
+<button type="button" onclick="changeText4()">/</button>
+
+<script>
+function changeText1() {
+    let a = 5;
+    let b = 7;
+    let x = a + b;
+    document.getElementById("demo").innerHTML = x;
+}
+function changeText2() {
+    let a = 5;
+    let b = 7;
+    let x = a - b;
+    document.getElementById("demo").innerHTML = x;
+}
+function changeText3() {
+    let a = 5;
+    let b = 7;
+    let x = a * b;
+    document.getElementById("demo").innerHTML = x;
+}
+function changeText4() {
+    let a = 5;
+    let b = 7;
+    let x = a / b;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+</html>

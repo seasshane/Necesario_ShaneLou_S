@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="showGrade()">Average Grade</button>
+
+<script>
+function showGrade() {
+    let prelim = 75;
+    let semi = 80;
+    let final = 90;
+
+    let average = (prelim + semi + final) / 3;
+
+    window.alert(
+        "Prelim : " + prelim +
+        "  Semi : " + semi +
+        "  Final : " + final +
+        "\nYour Average Grade is : " + average.toFixed(1) +
+        "\nYou're a Great Singer !!!"
+    );
+}
+</script>
+
+</body>
+</html>

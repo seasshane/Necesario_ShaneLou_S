@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Display</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: white;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 30px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }  
+        #resume-btn {
+            background-color: #1a2a6c;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #resume-btn:hover {
+            background-color: #2a3a8c;
+        }
+        .display-area {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 20px;
+            min-height: 150px;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+        #demo {
+            font-size: 1.6rem;
+            color: #1a2a6c;
+            font-weight: 700;
+            padding: 20px;
+            line-height: 1.8;
+            width: 100%;
+            max-width: 400px;
+        }
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .label {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .value {
+            color: #1a2a6c;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            #demo {
+                font-size: 1.4rem;
+            }
+            #resume-btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+            .value {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Display</h1>
+        </header>
+        <div class="button-container">
+            <button id="resume-btn">Resume</button>
+        </div>
+        <div class="display-area">
+            <div id="demo">Click the "Resume" button to display your information</div>
+        </div>
+    </div>
+    <script>
+        const resumeButton = document.getElementById('resume-btn');
+        const firstName = "Shane Lou";
+        const lastName = "Necesario";
+        const year = "3rd Year";
+        const section = "Northwest";
+        let isDisplayed = false;
+        function displayResume() {
+            if (!isDisplayed) {
+                document.getElementById("demo").innerHTML = 
+                    `<div class="info-item">
+                        <span class="label">First name:</span>
+                        <span class="value">${firstName}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Last name:</span>
+                        <span class="value">${lastName}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Year:</span>
+                        <span class="value">${year}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Section:</span>
+                        <span class="value">${section}</span>
+                    </div>`;
+                resumeButton.textContent = "Hide Information";
+                isDisplayed = true;
+            } else {
+                document.getElementById("demo").innerHTML = 
+                    "Click the 'Resume' button to display your information";
+                resumeButton.textContent = "Resume";
+                isDisplayed = false;
+            }
+        }
+        resumeButton.addEventListener('click', displayResume);
+    </script>
+</body>
+</html>
