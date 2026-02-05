@@ -1,0 +1,89 @@
+1. Git Push Workflow: Necesario_ShaneLou_S
+
+REM Step 1: Open your project folder in Terminal
+cd %USERPROFILE%\OneDrive\Desktop\Necesario_ShaneLou_S
+
+REM Step 2: Configure Git identity (only once per computer)
+git config --global user.name "Budjay Necesario"
+git config --global user.email "seasshane@gmail.com"
+
+REM Step 3: Initialize Git repository (only if not already initialized)
+git init
+
+REM Step 4: Add all project files to staging
+git add .
+
+REM Step 5: Commit your files with a message
+git commit -m "first commit"
+
+REM Step 6: Rename your branch to 'main' (GitHub default)
+git branch -M main
+
+REM Step 7: Add your GitHub repository as remote
+git remote add origin https://github.com/seasshane/Necesario_ShaneLou_S.git
+
+REM Step 8: If remote already exists, update it
+git remote set-url origin https://github.com/seasshane/Necesario_ShaneLou_S.git
+
+REM Step 9: Push your project to GitHub
+git push -u origin main
+
+REM Step 10: Verify on GitHub
+REM Open: https://github.com/seasshane/Necesario_ShaneLou_S
+
+
+2. Git Clone Workflow (Copy from GitHub)
+
+REM =========================
+REM CLONE (Copy from GitHub)
+REM =========================
+
+REM Step 1: Go to Desktop (or Documents)
+cd %USERPROFILE%\Desktop
+
+REM Step 2: Clone your GitHub repository
+git clone https://github.com/seasshane/Necesario_ShaneLou_S.git
+
+REM Step 3: Go into the cloned folder
+cd Necesario_ShaneLou_S
+
+3. Git Edit Workflow (Make a Small Change)
+
+REM =========================
+REM EDIT (Small Change)
+REM =========================
+
+REM Step 1: Open the file to edit
+code activity_1.html
+
+REM Step 2: Add a small change
+REM Example: add <!-- Edited by Budjay --> at the end of the file
+
+REM Step 3: Save the file
+
+4. Git Push Again Workflow (Send Edit to GitHub)
+
+REM =========================
+REM PUSH AGAIN (Send changes to GitHub)
+REM =========================
+
+REM Step 1: Stage the edited file
+git add .
+
+REM Step 2: Commit the change
+git commit -m "update activity_1.html"
+
+REM Step 3: Push the changes
+git push origin main
+
+5. Git Pull Workflow (Update Original Folder)
+
+REM =========================
+REM PULL (Get updates in ORIGINAL folder)
+REM =========================
+
+REM Step 1: Go back to original project folder
+cd %USERPROFILE%\OneDrive\Desktop\Necesario_ShaneLou_S
+
+REM Step 2: Pull the latest changes from GitHub
+git pull origin main
